@@ -3,8 +3,8 @@ module.exports = {
   description: '前端弹药库',
   themeConfig: {
     nav: [
-      { text: '独立组件库', link: '/components/' },
-      { text: 'CB-UI库', link: '/components/' },
+      { text: '独立组件', link: '/components/' },
+      // { text: 'CB-UI库', link: '/components/' },
     ],
     sidebar: [
       '/select/',
