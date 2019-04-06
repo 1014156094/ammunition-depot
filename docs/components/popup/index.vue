@@ -1,54 +1,42 @@
-# Popup 弹出层
-
-## 源码
-```
 <template>
   <div>
     <transition name="cb-fade">
-      <div
-        v-show="show && showMask"
-        class="cb-mask"
-        @click="onMask"
-      />
+      <div v-show="show && showMask"
+           class="cb-mask"
+           @click="onMask" />
     </transition>
     <transition :name="currentTransition">
-      <div
-        class="cb-popup"
-        :class="[`cb-popup--${position}`]"
-        v-show="show"
-      >
-        <div
-          @click="onClose"
-          class="cb-popup__title--container"
-          v-if="title || $slots.title || showCloseButton || $slots.closeButton"
-        >
-          <div
-            class="cb-popup__title"
-            v-if="title || $slots.title"
-          >
-            <slot name="title">
-              {{ title }}
-            </slot>
+      <div class="cb-popup"
+           :class="[`cb-popup--${position}`]"
+           v-show="show"
+           ref="CbPopup">
+        <div class="cb-popup--fix-ios-scroll"
+             ref="fixIosScroll">
+          <div @click="onClose"
+               class="cb-popup__header--container"
+               v-if="title || $slots.title || showCloseButton || $slots.closeButton">
+            <div class="cb-popup__header__title"
+                 v-if="title || $slots.title">
+              <slot name="title">
+                {{ title }}
+              </slot>
+            </div>
+            <div v-if="showCloseButton || $slots.closeButton"
+                 class="cb-popup__header__close--container">
+              <slot name="close">
+                <div class="cb-popup__header__close"></div>
+              </slot>
+            </div>
           </div>
-          <div
-            v-if="showCloseButton || $slots.closeButton"
-            class="cb-popup__title__close"
-          >
-            <slot name="close">
-              <iconfont
-                name="close"
-              />
-            </slot>
+
+          <div class="cb-popup__content--container">
+            <slot />
           </div>
-        </div>
-        <div class="cb-popup__content--container">
-          <slot />
         </div>
       </div>
     </transition>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -78,7 +66,7 @@ export default {
     // 是否显示关闭按钮
     showCloseButton: {
       type: Boolean,
-      default: false
+      default: true
     },
     // 是否显示遮罩
     showMask: {
@@ -95,6 +83,16 @@ export default {
   watch: {
     value(newVal) {
       this.show = newVal
+    }
+  },
+
+  updated() {
+    // 解决动态内容导致无法overflow: scroll不滚动
+    if (
+      this.$refs.fixIosScroll.offsetHeight >
+      document.documentElement.clientHeight
+    ) {
+      this.$refs.fixIosScroll.style.height = '100vh'
     }
   },
 
@@ -144,19 +142,24 @@ export default {
   z-index: 2069;
   max-height: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: #fff;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  -webkit-overflow-scrolling: touch;
   transform: translate(-50%, -50%);
-  .cb-popup__title--container {
+
+  .cb-popup__header--container {
     position: relative;
     margin: 16px;
     text-align: center;
-    .cb-popup__title {
+    .cb-popup__header__title {
       font-size: 16px;
+      margin-right: 22px;
     }
-    .cb-popup__title__close {
+    .cb-popup__header__close--container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       top: 0;
       right: 0;
@@ -164,12 +167,33 @@ export default {
       width: 22px;
       height: 22px;
       color: #999;
-      .icon {
-        width: 100%;
-        height: 100%;
+      .cb-popup__header__close {
+        position: relative;
+        width: 20px;
+        height: 2px;
+        background-color: #000;
+        transform: rotate(45deg);
+        border-radius: 15px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 20px;
+          height: 2px;
+          background-color: #000;
+          transform: rotate(90deg);
+          border-radius: 15px;
+        }
       }
     }
   }
+
+  .cb-popup--fix-ios-scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .cb-popup__content--container {
     margin: 16px;
   }
@@ -244,20 +268,3 @@ export default {
   transform: translate(-100%, -50%);
 }
 </style>
-
-```
-
-## Props
-
-属性名 | 说明 | 类型 |默认值
----|---|---|---
-| `v-model` | 是否显示 | `Boolean` | `false` |
-| `position` | 出现位置，可选值为 `top`、`right`、`bottom`、`left` | `String` | `''` |
-| `showMask` | 是否显示遮罩 | `Boolean` | `true` |
-| `closeOnClickMask` | 是否点击遮罩后关闭 | `Boolean` | `true` |
-
-## Slots
-
-插槽名 | 说明
----|---
-默认 | 内容主体

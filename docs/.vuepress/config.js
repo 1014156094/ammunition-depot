@@ -1,14 +1,16 @@
 module.exports = {
-  title: '前端弹药库',
-  description: '前端弹药库',
+  title: '弹药库',
+  base: '',
+  description: '弹药库',
   themeConfig: {
     nav: [
-      { text: '独立组件', link: '/components/' },
+      { text: 'Vue移动端独立组件', link: '/components/' },
       // { text: 'CB-UI库', link: '/components/' },
     ],
     sidebar: [
-      '/select/',
-      '/popup/',
+      '/independent-component/select/',
+      '/independent-component/popup/',
+      '/independent-component/loading/',
     ]
   }
 }
