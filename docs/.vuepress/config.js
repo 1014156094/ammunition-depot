@@ -4,7 +4,8 @@ module.exports = {
   description: '弹药库',
   themeConfig: {
     nav: [
-      { text: 'Vue移动端独立组件', link: '/components/' },
+      { text: 'Vue移动端独立组件', link: '/independent-component/' },
+      { text: '纯CSS图标', link: '/css-icon/' },
       // { text: 'CB-UI库', link: '/components/' },
     ],
     sidebar: [
