@@ -12,6 +12,7 @@ module.exports = {
       '/independent-component/select/',
       '/independent-component/popup/',
       '/independent-component/loading/',
+      '/independent-component/dialog/',
     ]
   }
 }

@@ -1,43 +1,23 @@
-# Select 下拉选择器
+# Dialog 对话框
 
-优点：
-- 选项过多超出屏幕，能自动改变下拉方向
-- 点击下拉外的内容，能自动关闭
-
-## 源码
+## 示例
 
 <template>
     <div>
         <demo-code>
-            <button @click="showDialog = !showDialog">显示对话框</button>
-            <cb-select
-                :options="[1, 2, 3]"
-                :selected="selected"
-                @change="onChange"
-            />
+            <button @click="showDialog = !showDialog">显示</button>
             <highlight-code slot="codeText" lang="vue">
                 <template>
-                    <Content slot-key="name"/>
+                    <Content slot-key="source"/>
                 </template>
             </highlight-code>
         </demo-code>
-        <cb-dialog v-model="showDialog" title="title"></cb-dialog>
+        <cb-dialog v-model="showDialog" title="我是标题" message="我是消息我是消息我是消息我是消息我是消息我是消息我是消息我是消息"></cb-dialog>
     </div>
 </template>
 
 <script>
-import CbDialog from '../../components/dialog'
-import CbSelect from '../../components/select'
-import DemoCode from '../../components/demo-code'
-import Vue from 'vue'
-
-Vue.use(CbDialog)
-
 export default {
-    components: {
-        DemoCode,
-        CbSelect
-    },
     data() {
         return {
             selected: '',
@@ -52,19 +32,28 @@ export default {
 }
 </script>
 
-::: slot name
+::: slot source
 <<< @/docs/components/dialog/Dialog.vue
 :::
 
+## 插槽
+| 名称 | 说明 |
+|---|---|
+| 默认 | 对话框主体 |
+| title | 标题 |
+| message | 消息 |
+| buttons | 按钮 |
+
 ## 属性
-
-属性名 | 说明 | 类型 |默认值
----|---|---|---
-| `options` | 选项 | `Array` | `[]` |
-| `selected` | 选中值，支持 `html`，为了提高通用性，请在 `change` 后自行设置 | `String` | `'请选择'` |
-
-## 事件
-
-事件名 | 说明 | 参数
----|---|---
-`change` | 点击选项后执行 `selected` | `event`
+| 名称 | 说明 | 类型 | 默认值 |
+|---|---|---|---|
+| v-model | 是否显示对话框 | `Boolean` | `false` |
+| title | 标题 | `String` | `''` |
+| message | 消息 | `String` | `''` |
+| show-close-button | 是否显示关闭按钮 | `Boolean` | `true` |
+| show-cancel-button | 是否显示取消按钮 | `Boolean` | `false` |
+| show-confirm-button | 是否显示确定按钮 | `Boolean` | `true` |
+| cancel-button-text | 取消按钮文案 | `String` | `确定` |
+| confirm-button-text | 确定按钮文案 | `String` | `取消` |
+| close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `false` |
+| before-close |关闭前的回调函数 <br> 目前`action` 有 `confirm` 和 `cancel`两种 <br> 调用 `next()` 后关闭弹窗 <br> 调用 `next(false)` 阻止弹窗关闭| `(action, next) => void` | `null` |

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import DemoCode from '../components/demo-code'
 import Popup from '../components/popup'
-// import Dialog from '../components/dialog'
+import Dialog from '../components/dialog'
 import Loading from '../components/loading'
 import Select from '../components/select'
 import IconClose from '../css-icon/icon-close'
@@ -13,7 +13,7 @@ let components = [
     IconClose
 ]
 
-// Vue.use(Dialog)
+Vue.use(Dialog)
 Vue.use(Loading)
 
 components.forEach((elem)=>{

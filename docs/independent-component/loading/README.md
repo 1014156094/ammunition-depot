@@ -9,8 +9,8 @@
 <template>
     <div>
         <demo-code>
-            <button @click="onShow">点我显示</button>
-            <button @click="onClose">点我关闭</button>
+            <button @click="onShow">显示</button>
+            <button @click="onClose">关闭</button>
             <highlight-code slot="codeText" lang="vue">
                 <template>
                     <Content slot-key="source"/>
@@ -47,13 +47,13 @@ export default {
 
 ## 属性
 
-属性名 | 说明 | 类型 |默认值
+名称 | 说明 | 类型 |默认值
 ---|---|---|---
 | `options` | 选项 | `Array` | `[]` |
 | `selected` | 选中值，支持 `html`，为了提高通用性，请在 `change` 后自行设置 | `String` | `'请选择'` |
 
 ## 事件
 
-事件名 | 说明 | 参数
+名称 | 说明 | 参数
 ---|---|---
 `change` | 点击选项后执行 `selected` | `event`
