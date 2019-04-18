@@ -49,14 +49,7 @@
 </template>
 
 <script>
-import CbPopup from '../../components/popup'
-import DemoCode from '../../components/demo-code'
-
 export default {
-    components: {
-        DemoCode,
-        CbPopup
-    },
     data() {
         return {
             show: false,

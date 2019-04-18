@@ -9,13 +9,13 @@
         <slot></slot>
       </div>
     </div>
+    <div v-if="$slots.codeText"
+         class="code--button"
+         @click="handleToggleShow">{{codeTextBtn}}</div>
     <div v-if="isShow"
          class="code--segment">
       <slot name="codeText"></slot>
     </div>
-    <div v-if="$slots.codeText"
-         class="code--button"
-         @click="handleToggleShow">{{codeTextBtn}}</div>
   </div>
 </template>
 

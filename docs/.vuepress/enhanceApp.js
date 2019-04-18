@@ -4,7 +4,8 @@ import Popup from '../components/popup'
 import Dialog from '../components/dialog'
 import Loading from '../components/loading'
 import Select from '../components/select'
-import IconClose from '../css-icon/icon-close'
+import Toast from '../components/toast'
+import IconClose from '../pages/css-icon/icon-close'
 
 let components = [
     Popup,
@@ -15,6 +16,7 @@ let components = [
 
 Vue.use(Dialog)
 Vue.use(Loading)
+Vue.use(Toast)
 
 components.forEach((elem)=>{
     Vue.component(elem.name, elem)

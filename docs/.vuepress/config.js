@@ -1,18 +1,19 @@
 module.exports = {
   title: '弹药库',
-  base: '',
+  base: '/arsenal/',
   description: '弹药库',
   themeConfig: {
     nav: [
-      { text: 'Vue移动端独立组件', link: '/independent-component/' },
-      { text: '纯CSS图标', link: '/css-icon/' },
-      // { text: 'CB-UI库', link: '/components/' },
+      { text: 'Vue 移动端独立组件', link: '/pages/independent-component/' },
+      { text: 'Vue CB-UI 库', link: '/pages/cb-ui/' },
+      { text: '纯 CSS 图标', link: '/pages/css-icon/' },
     ],
     sidebar: [
-      '/independent-component/select/',
-      '/independent-component/popup/',
-      '/independent-component/loading/',
-      '/independent-component/dialog/',
+      '/pages/independent-component/select/',
+      '/pages/independent-component/popup/',
+      '/pages/independent-component/loading/',
+      '/pages/independent-component/dialog/',
+      '/pages/independent-component/toast/',
     ]
   }
 }

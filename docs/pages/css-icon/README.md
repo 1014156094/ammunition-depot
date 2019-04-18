@@ -66,5 +66,5 @@ sidebar: false
 </style>
 
 ::: slot source
-<<< @/docs/css-icon/icon-close/index.vue
+<<< @/docs/pages/css-icon/icon-close/index.vue
 :::
