@@ -1,7 +1,7 @@
 module.exports = {
-  title: '弹药库',
+  title: '军火库',
   base: '/arsenal/',
-  description: '弹药库',
+  description: '军火库',
   themeConfig: {
     nav: [
       { text: 'Vue 移动端独立组件', link: '/pages/independent-component/' },

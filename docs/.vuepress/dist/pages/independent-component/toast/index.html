@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Toast 轻提示 | 军火库</title>
+    <meta name="description" content="军火库">
+    
+    
+    <link rel="preload" href="/arsenal/assets/css/0.styles.fa833696.css" as="style"><link rel="preload" href="/arsenal/assets/js/app.bc176357.js" as="script"><link rel="preload" href="/arsenal/assets/js/2.b18328c8.js" as="script"><link rel="preload" href="/arsenal/assets/js/14.bccdcef3.js" as="script"><link rel="prefetch" href="/arsenal/assets/js/10.047ddcab.js"><link rel="prefetch" href="/arsenal/assets/js/11.8ffdde25.js"><link rel="prefetch" href="/arsenal/assets/js/12.832c1eea.js"><link rel="prefetch" href="/arsenal/assets/js/13.6e7401b4.js"><link rel="prefetch" href="/arsenal/assets/js/15.8a3450eb.js"><link rel="prefetch" href="/arsenal/assets/js/3.520b18d3.js"><link rel="prefetch" href="/arsenal/assets/js/4.8c0ded0f.js"><link rel="prefetch" href="/arsenal/assets/js/5.2d643a43.js"><link rel="prefetch" href="/arsenal/assets/js/6.ecda2346.js"><link rel="prefetch" href="/arsenal/assets/js/7.b4cbb1c6.js"><link rel="prefetch" href="/arsenal/assets/js/8.995f925f.js"><link rel="prefetch" href="/arsenal/assets/js/9.099b8ad1.js">
+    <link rel="stylesheet" href="/arsenal/assets/css/0.styles.fa833696.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/arsenal/" class="home-link router-link-active"><!----> <span class="site-name">军火库</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/arsenal/pages/independent-component/" class="nav-link router-link-active">Vue 移动端独立组件</a></div><div class="nav-item"><a href="/arsenal/pages/cb-ui/" class="nav-link">Vue CB-UI 库</a></div><div class="nav-item"><a href="/arsenal/pages/css-icon/" class="nav-link">纯 CSS 图标</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/arsenal/pages/independent-component/" class="nav-link router-link-active">Vue 移动端独立组件</a></div><div class="nav-item"><a href="/arsenal/pages/cb-ui/" class="nav-link">Vue CB-UI 库</a></div><div class="nav-item"><a href="/arsenal/pages/css-icon/" class="nav-link">纯 CSS 图标</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/arsenal/pages/independent-component/select/" class="sidebar-link">Select 下拉选择器</a></li><li><a href="/arsenal/pages/independent-component/popup/" class="sidebar-link">Popup 弹出层</a></li><li><a href="/arsenal/pages/independent-component/loading/" class="sidebar-link">Select 下拉选择器</a></li><li><a href="/arsenal/pages/independent-component/dialog/" class="sidebar-link">Dialog 对话框</a></li><li><a href="/arsenal/pages/independent-component/toast/" class="active sidebar-link">Toast 轻提示</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/arsenal/pages/independent-component/toast/#示例" class="sidebar-link">示例</a></li><li class="sidebar-sub-header"><a href="/arsenal/pages/independent-component/toast/#使用" class="sidebar-link">使用</a></li></ul></li></ul> </aside> <main class="page"> <div class="content default"><h1 id="toast-轻提示"><a href="#toast-轻提示" aria-hidden="true" class="header-anchor">#</a> Toast 轻提示</h1> <h2 id="示例"><a href="#示例" aria-hidden="true" class="header-anchor">#</a> 示例</h2> <div><div class="code" data-v-03eb1b21><div class="code--title" data-v-03eb1b21><h2 data-v-03eb1b21></h2> <small data-v-03eb1b21></small></div> <div class="code--demo" data-v-03eb1b21><div class="code-content" data-v-03eb1b21><button data-v-03eb1b21>显示</button> </div></div> <div class="code--button" data-v-03eb1b21>显示组件源码</div> <!----></div></div> <h2 id="使用"><a href="#使用" aria-hidden="true" class="header-anchor">#</a> 使用</h2> <p>引入组件后，会自动在 <code>Vue</code> 的 <code>prototype</code> 上挂载 <code>$toast</code> 方法，在所有组件内部都可以直接调用</p> <div class="language- extra-class"><pre class="language-text"><code>export default {
+  mounted() {
+    this.$toast('我是轻提示！')
+  }
+}
+</code></pre></div><p><code>$toast</code> 方法可接受1个对象配置参数</p> <div class="language- extra-class"><pre class="language-text"><code>export default {
+  mounted() {
+    this.$toast({
+      show: true,
+      text: '我是轻提示！',
+      duration: 3000
+    })
+  }
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/arsenal/pages/independent-component/dialog/" class="prev">
+          Dialog 对话框
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/arsenal/assets/js/app.bc176357.js" defer></script><script src="/arsenal/assets/js/2.b18328c8.js" defer></script><script src="/arsenal/assets/js/14.bccdcef3.js" defer></script>
+  </body>
+</html>
