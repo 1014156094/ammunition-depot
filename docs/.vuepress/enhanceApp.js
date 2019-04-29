@@ -1,4 +1,5 @@
 import Vue from 'vue'
+// import VueRouter from 'vue-router'
 import DemoCode from '../components/demo-code'
 import Popup from '../components/popup'
 import Dialog from '../components/dialog'
@@ -22,6 +23,29 @@ components.forEach((elem)=>{
     Vue.component(elem.name, elem)
 })
 
+// let router = new VueRouter({
+//     mode: 'history',
+//     base: '/arsenal/',
+//     routes: [
+//         {
+//             path: '/arsenal',
+//             redirect: '/',
+//         },
+//         {
+//             path: '',
+//             redirect: '/',
+//         },
+//         {
+//             path: '*',
+//             redirect: '/',
+//         },
+//         {
+//             path: '**',
+//             redirect: '/',
+//         }
+//     ]
+// })
+
 // export default ({
 //     Vue, // VuePress 正在使用的 Vue 构造函数
 //     options, // 附加到根实例的一些选项
@@ -30,3 +54,4 @@ components.forEach((elem)=>{
 // }) => {
 //     // ...做一些其他的应用级别的优化
 // }
+

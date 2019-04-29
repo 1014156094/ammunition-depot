@@ -2,10 +2,11 @@ module.exports = {
   title: '军火库',
   base: '/arsenal/',
   description: '军火库',
+  dest: './arsenal',   // 设置输出目录
   themeConfig: {
     nav: [
-      { text: 'Vue 移动端独立组件', link: '/pages/independent-component/' },
-      { text: 'Vue CB-UI 库', link: '/pages/cb-ui/' },
+      { text: 'Vue 移动端独立组件', link: '/' },
+      { text: 'Vue CubicUI 库', link: '/pages/cb-ui/' },
       { text: '纯 CSS 图标', link: '/pages/css-icon/' },
     ],
     sidebar: [
