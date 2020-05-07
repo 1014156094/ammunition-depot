@@ -17,7 +17,7 @@ export default {
     return {
       show: false,
       text: '',
-      duration: 1500,
+      duration: 3000,
       style: ''
     }
   },
@@ -25,7 +25,7 @@ export default {
     resetData() {
       this.show = false
       this.text = ''
-      this.duration = 1500
+      this.duration = 3000
       this.style = ''
     }
   }
@@ -44,16 +44,22 @@ export default {
 }
 
 .cb-toast {
-  padding: 8px 15px;
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 2070;
+  z-index: 2071;
+  width: fit-content;
+  min-width: 96px;
+  max-width: 70%;
+  padding: 8px 12px;
   transform: translate(-50%, -50%);
+  white-space: pre-wrap;
+  text-align: center;
+  word-break: break-all;
   color: #fff;
   font-size: 14px;
-  white-space: nowrap;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
+  line-height: 20px;
+  background-color: rgba(50, 50, 51, 0.88);
+  border-radius: 4px;
 }
 </style>

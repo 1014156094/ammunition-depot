@@ -8,11 +8,10 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "vuepress": "^1.0.0-alpha.47",
-    "yarn": "^1.15.2"
+    "vuepress": "^1.0.0-alpha.47"
   },
   "dependencies": {
-    "less": "^3.9.0",
+    "less": "^3.11.1",
     "less-loader": "^4.1.0",
     "normalize.css": "^8.0.1"
   }
